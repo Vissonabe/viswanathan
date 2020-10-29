@@ -272,7 +272,7 @@ const Featured = () => {
 
   return (
     <section id="projects">
-      <h2 className="numbered-heading" ref={revealTitle}>
+      <h2 className="numbered-heading">
         Some Things I’ve Built
       </h2>
 
@@ -283,7 +283,7 @@ const Featured = () => {
             const { external, title, tech, github, cover } = frontmatter;
 
             return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+              <StyledProject key={i}>
                 <div className="project-content">
                   <p className="project-overline">Featured Project</p>
                   <h3 className="project-title">{title}</h3>

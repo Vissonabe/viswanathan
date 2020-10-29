@@ -45,7 +45,7 @@ const Contact = () => {
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
-    <StyledContactSection id="contact" ref={revealContainer}>
+    <StyledContactSection id="contact">
       <h2 className="numbered-heading overline">What’s Next?</h2>
 
       <h2 className="title">Get In Touch</h2>

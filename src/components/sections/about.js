@@ -124,16 +124,16 @@ const About = () => {
     }
   `);
 
-  const revealContainer = useRef(null);
+  // const revealContainer = useRef(null);
 
-  useEffect(() => {
-    sr.reveal(revealContainer.current, srConfig());
-  }, []);
+  // useEffect(() => {
+  //   sr.reveal(revealContainer.current, srConfig());
+  // }, []);
 
   const skills = aboutMe.skills
 
   return (
-    <StyledAboutSection id="about" ref={revealContainer}>
+    <StyledAboutSection id="about">
       <h2 className="numbered-heading">About Me</h2>
 
       <div className="inner">
