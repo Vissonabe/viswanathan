@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { srConfig, aboutMe } from '@config';
-import sr from '@utils/sr';
+import { aboutMe } from '@config';
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -19,7 +18,6 @@ const StyledAboutSection = styled.section`
   }
 `;
 const StyledText = styled.div`
-
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -36,7 +34,7 @@ const StyledText = styled.div`
       font-size: var(--fz-xs);
 
       &:before {
-        content: '▹';
+        content: "▹";
         position: absolute;
         left: 0;
         color: var(--green);
@@ -86,7 +84,7 @@ const StyledPic = styled.div`
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       width: 100%;
@@ -114,7 +112,10 @@ const StyledPic = styled.div`
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
-      avatar: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me.jpg" }) {
+      avatar: file(
+        sourceInstanceName: { eq: "images" }
+        relativePath: { eq: "me.jpg" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 500, maxHeight: 600, traceSVG: { color: "#64ffda" }) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -124,13 +125,7 @@ const About = () => {
     }
   `);
 
-  // const revealContainer = useRef(null);
-
-  // useEffect(() => {
-  //   sr.reveal(revealContainer.current, srConfig());
-  // }, []);
-
-  const skills = aboutMe.skills
+  const skills = aboutMe.skills;
 
   return (
     <StyledAboutSection id="about">
@@ -141,13 +136,9 @@ const About = () => {
           <div>
             <p>{aboutMe.text1}</p>
 
-            <p>
-              {aboutMe.sub1}
-            </p>
+            <p>{aboutMe.sub1}</p>
 
-            <p>
-              {aboutMe.sub2}
-            </p>
+            <p>{aboutMe.sub2}</p>
 
             <p>Here are a few technologies I've been working with recently:</p>
           </div>
@@ -159,11 +150,14 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <Img fluid={data.avatar.childImageSharp.fluid} alt="Avatar" className="img" />
+            <Img
+              fluid={data.avatar.childImageSharp.fluid}
+              alt="Avatar"
+              className="img"
+            />
           </div>
         </StyledPic>
       </div>
-
     </StyledAboutSection>
   );
 };

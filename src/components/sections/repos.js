@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 
@@ -37,95 +35,6 @@ const StyledProjectsSection = styled.section`
   .more-button {
     ${({ theme }) => theme.mixins.button};
     margin: 40px auto 0;
-  }
-`;
-
-const StyledProject = styled.div`
-  cursor: default;
-  transition: var(--transition);
-
-  &:hover,
-  &:focus {
-    outline: 0;
-    .project-inner {
-      transform: translateY(-5px);
-    }
-  }
-
-  .project-inner {
-    ${({ theme }) => theme.mixins.boxShadow};
-    ${({ theme }) => theme.mixins.flexBetween};
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    width: 350px;
-    height: 250px;
-    padding: 2rem 1.75rem;
-    border-radius: var(--border-radius);
-    background-color: var(--light-navy);
-    transition: var(--transition);
-  }
-
-  .project-top {
-    ${({ theme }) => theme.mixins.flexBetween};
-    margin-bottom: 30px;
-
-    .folder {
-      color: var(--green);
-      svg {
-        width: 40px;
-        height: 40px;
-      }
-    }
-
-    .project-links {
-      margin-right: -10px;
-      color: var(--light-slate);
-
-      a {
-        padding: 5px 10px;
-
-        svg {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    }
-  }
-
-  .project-title {
-    margin: 0 0 10px;
-    color: var(--lightest-slate);
-    font-size: var(--fz-xxl);
-  }
-
-  .project-description {
-    color: var(--light-slate);
-    font-size: 17px;
-
-    a {
-      ${({ theme }) => theme.mixins.inlineLink};
-    }
-  }
-
-  .project-tech-list {
-    display: flex;
-    align-items: flex-end;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 20px 0 0 0;
-    list-style: none;
-
-    li {
-      font-family: var(--font-mono);
-      font-size: var(--fz-xxs);
-      line-height: 1.75;
-
-      &:not(:last-of-type) {
-        margin-right: 15px;
-      }
-    }
   }
 `;
 
@@ -229,9 +138,7 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-
 const Repo = () => {
-
   const data = useStaticQuery(
     graphql`
       query MyQuery {
@@ -262,10 +169,10 @@ const Repo = () => {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const repos = data.allGithubData.nodes[0].data.user.repositories.nodes
+  const repos = data.allGithubData.nodes[0].data.user.repositories.nodes;
 
   const [showMore, setShowMore] = useState(false);
 
@@ -274,71 +181,74 @@ const Repo = () => {
   const firstSix = repos.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? repos : firstSix;
 
-    return (
-      <StyledProjectsSection>
+  return (
+    <StyledProjectsSection>
       <h2>Other Noteworthy Projects</h2>
 
-
       <StyledTableContainer>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th className="hide-on-mobile">Languages</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {projectsToShow.length > 0 &&
-                projectsToShow.map((node , i) => {
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th className="hide-on-mobile">Languages</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projectsToShow.length > 0 &&
+              projectsToShow.map((node, i) => {
+                const description = node.description;
+                const lang = node.languages.nodes;
+                const url = node.url;
 
-                  const description = node.description
-                  const lang = node.languages.nodes;
-                  const url = node.url
+                return (
+                  <tr key={i}>
+                    <td className="overline year">{node.name}</td>
 
-                  return (
-                    <tr key={i}>
-                      <td className="overline year">{node.name}</td>
+                    <td className="title">
+                      {description ? (
+                        <span>{description}</span>
+                      ) : (
+                        <span>--</span>
+                      )}
+                    </td>
 
-                      <td className="title">{description ? <span>{description}</span> : <span>--</span>}</td>
+                    <td className="tech hide-on-mobile">
+                      {lang.length > 0 &&
+                        lang.map((item, i) => (
+                          <span key={i}>
+                            {item.name}
+                            {''}
+                            {i !== lang.length - 1 && (
+                              <span className="separator">&middot;</span>
+                            )}
+                          </span>
+                        ))}
+                      {lang.length === 0 && <span>--</span>}
+                    </td>
 
-                      <td className="tech hide-on-mobile">
-                        {lang.length > 0 &&
-                          lang.map((item, i) => (
-                          
-                            <span key={i}>
-                              {item.name}
-                              {''}
-                              {i !== lang.length - 1 && <span className="separator">&middot;</span>}
-                            </span>
-                          ))}
-                          {
-                            lang.length === 0 && ( <span>--</span> )
-                          }
-                      </td>
-
-                      <td className="links">
-                        <div>
-                          {url && (
-                            <a href={url} aria-label="GitHub Link">
-                              <Icon name="GitHub" />
-                            </a>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
-        </StyledTableContainer>
+                    <td className="links">
+                      <div>
+                        {url && (
+                          <a href={url} aria-label="GitHub Link">
+                            <Icon name="GitHub" />
+                          </a>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      </StyledTableContainer>
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}
       </button>
     </StyledProjectsSection>
-    );
-}
+  );
+};
 
-export default Repo
+export default Repo;

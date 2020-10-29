@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
@@ -50,7 +50,7 @@ const StyledCredit = styled.div`
     padding: 10px;
   }
 
-  h3{
+  h3 {
     padding: 10px;
   }
 
@@ -71,13 +71,11 @@ const StyledCredit = styled.div`
   }
 `;
 
-const Footer = () => {
-
-  return (
-    <StyledFooter>
-      <StyledSocialLinks>
-        <ul>
-          {socialMedia &&
+const Footer = () => (
+  <StyledFooter>
+    <StyledSocialLinks>
+      <ul>
+        {socialMedia &&
             socialMedia.map(({ name, url }, i) => (
               <li key={i}>
                 <a href={url} aria-label={name}>
@@ -85,18 +83,19 @@ const Footer = () => {
                 </a>
               </li>
             ))}
-        </ul>
-      </StyledSocialLinks>
+      </ul>
+    </StyledSocialLinks>
 
-      <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Thanks to Brittany Chiang for this awesome opensource project.</div>
-        </a>
-        <h3>Built with Gatsby</h3>
-      </StyledCredit>
-    </StyledFooter>
-  );
-};
+    <StyledCredit tabindex="-1">
+      <a href="https://github.com/bchiang7/v4">
+        <div>
+            Thanks to Brittany Chiang for this awesome opensource project.
+        </div>
+      </a>
+      <h3>Built with Gatsby</h3>
+    </StyledCredit>
+  </StyledFooter>
+);
 
 Footer.propTypes = {
   githubInfo: PropTypes.object,
