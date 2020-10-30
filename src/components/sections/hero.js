@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { hero } from '@config';
 
@@ -51,14 +50,10 @@ const Hero = () => {
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">{hero.name}</h2>;
   const three = <h3 className="big-heading">{hero.domain}</h3>;
-  const four = (
-    <p>
-      {hero.description}
-    </p>
-  );
+  const four = <p>{hero.description}</p>;
   const five = (
-    <a href={`mailto:${email}`} className="email-link">
-      Get In Touch
+    <a href="/resume.pdf" className="email-link">
+      Resume
     </a>
   );
 

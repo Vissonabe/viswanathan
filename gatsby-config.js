@@ -2,7 +2,7 @@ const config = require('./src/config');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const { githubApiQuery } = require('./github-api')
+const { githubApiQuery } = require('./github-api');
 
 module.exports = {
   siteMetadata: {
@@ -23,19 +23,19 @@ module.exports = {
     {
       resolve: `gatsby-source-github-api`,
       options: {
-        url: "https://api.github.com/graphql", // default Github GraphQL v4 API endpoint
-  
+        url: 'https://api.github.com/graphql', // default Github GraphQL v4 API endpoint
+
         // token: required by the GitHub API
         token: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
-  
+
         // GraphQLquery: defaults to a search query
         graphQLQuery: githubApiQuery,
-  
+
         // variables: defaults to variables needed for a search query
         variables: {
-          github_login: process.env.GITHUB_LOGIN
-        }
-      }
+          github_login: process.env.GITHUB_LOGIN,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -57,17 +57,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `arts`,
+        path: `${__dirname}/src/images/art/`,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: `${__dirname}/content/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects`,
       },
     },
     {

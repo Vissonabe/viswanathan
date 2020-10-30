@@ -1,11 +1,11 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "website",
+  "description": "Personal Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Viswanathan <vissonabe@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/Vissonabe"
   },
   "keywords": [
     "gatsby"
@@ -14,6 +14,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "developssl": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -60,6 +61,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-simple-image-slider": "^1.0.4",
     "react-transition-group": "^4.4.1",
     "scrollreveal": "^4.0.7",
     "smooth-scroll": "^16.1.3",

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Icon } from '@components/icons';
 
 const StyledProjectsSection = styled.section`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +40,7 @@ const StyledProjectsSection = styled.section`
 `;
 
 const StyledTableContainer = styled.div`
+  width: 100%;
   margin: 80px -30px;
   @media (max-width: 768px) {
     margin: 50px -10px;
@@ -152,7 +154,7 @@ const Repo = () => {
                     id
                     name
                     openGraphImageUrl
-                    updatedAt(fromNow: true)
+                    updatedAt(locale: "")
                     url
                     primaryLanguage {
                       name
@@ -178,6 +180,11 @@ const Repo = () => {
 
   const GRID_LIMIT = 6;
   // const projects = repos.filter(({ node }) => node);
+  repos.sort(function(a, b) {
+    // Turn your strings into dates, and then subtract them
+    // to get a value that is either negative, positive, or zero.
+    return new Date(b.updatedAt) - new Date(a.updatedAt);
+  });
   const firstSix = repos.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? repos : firstSix;
 

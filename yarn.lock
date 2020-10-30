@@ -876,6 +876,13 @@
     "core-js-pure" "^3.0.0"
     "regenerator-runtime" "^0.13.4"
 
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+  "integrity" "sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q=="
+  "resolved" "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz"
+  "version" "7.9.2"
+  dependencies:
+    "regenerator-runtime" "^0.13.4"
+
 "@babel/runtime@^7.10.0":
   "version" "7.12.1"
   dependencies:
@@ -888,13 +895,6 @@
 
 "@babel/runtime@^7.11.2":
   "version" "7.12.1"
-  dependencies:
-    "regenerator-runtime" "^0.13.4"
-
-"@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
-  "integrity" "sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q=="
-  "resolved" "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz"
-  "version" "7.9.2"
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
@@ -11726,6 +11726,14 @@
   "integrity" "sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg=="
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.0.tgz"
   "version" "2.1.0"
+
+"react-simple-image-slider@^1.0.4":
+  "integrity" "sha512-R1zh/HkAwzIplEA+zmt/qsq2S6wuIdN5I2hWllCiw5mYg37jE0GMxzcyQ+Noat3yArjg87YWgK4IdPkve2DXOw=="
+  "resolved" "https://registry.npmjs.org/react-simple-image-slider/-/react-simple-image-slider-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    "prop-types" "^15.6.2"
 
 "react-transition-group@^4.4.1":
   "version" "4.4.1"
