@@ -20,41 +20,25 @@ module.exports = {
     text1:
       'Hello! I\'m Viswanathan, a software engineer based in Bengaluru, INDIA.',
     sub1:
-      'I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that providepixel-perfect, performant experiences.',
+      'A forward-thinking developer with more than 7 years of experience in building, integrating, testing, and supporting Android, Windows Mobile and Windows Desktop applications.      ',
     sub2:
-      'Shortly after graduating from Northeastern University, I joined the engineering team at Accenture, where I workon a wide variety of interesting and meaningful projects on a daily basis.',
-    skills: ['Java', 'HTML & (S)CSS', 'Gatsby', 'Kotlin', 'Flutter'],
+      'In my 7 years of experience, I worked in multiple companies, which include Accenture, OlaCabs, Tathasthu, Swiggy & now currently working in PayPal as Lead Android Developer.',
+    skills: [
+      'Java',
+      'HTML & (S)CSS',
+      'Gatsby',
+      'Kotlin',
+      'Flutter',
+      'Protobuf',
+    ],
   },
 
   hero: {
     name: 'Viswanathan',
     domain: 'I build things for the Mobile (Android).',
     description:
-      'I\'m a software engineer based in Bengaluru, INDIA specializing in building (and occasionally designing) exceptional Android mobile apps.',
+      'I\'m a software engineer based in Bengaluru, INDIA specializing in building exceptional Android mobile apps.',
   },
-
-  // navLinks: [
-  //   {
-  //     name: 'Home',
-  //     url: '/',
-  //   },
-  //   {
-  //     name: 'About',
-  //     url: '/#about',
-  //   },
-  //   {
-  //     name: 'Experience',
-  //     url: '/#jobs',
-  //   },
-  //   {
-  //     name: 'Work',
-  //     url: '/#projects',
-  //   },
-  //   {
-  //     name: 'Contact',
-  //     url: '/#contact',
-  //   },
-  // ],
 
   colors: {
     green: '#64ffda',

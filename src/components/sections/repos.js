@@ -199,7 +199,7 @@ const Repo = () => {
               <th>Name</th>
               <th>Description</th>
               <th className="hide-on-mobile">Languages</th>
-              <th>Link</th>
+              <th className="hide-on-mobile">Link</th>
             </tr>
           </thead>
           <tbody>

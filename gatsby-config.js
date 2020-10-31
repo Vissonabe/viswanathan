@@ -9,7 +9,7 @@ module.exports = {
     title: 'Viswanathan',
     description:
       'Viswanathan is a software engineer specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.',
-    siteUrl: 'https://Viswanathan.com', // No trailing slash allowed!
+    siteUrl: 'https://viswanathankp.netlify.app',
     image: '', // Path to your image you placed in the 'static' folder
     twitterUsername: '@Viswanathankp',
   },
