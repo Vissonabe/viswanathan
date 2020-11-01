@@ -37,10 +37,6 @@ const StyledInner = styled.div`
   padding: 10px;
   margin: 10px 0px 0px 0px;
 
-  @media (max-width: 768px) {
-    height: 250px;
-  }
-
   .wrapper {
     position: relative;
 
