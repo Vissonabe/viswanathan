@@ -57,6 +57,7 @@ const StyledInner = styled.div`
     }
 
     .img {
+      display: block;
       width: 300px;
       height: 350px;
       opacity: 0.4;
