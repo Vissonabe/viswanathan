@@ -3,7 +3,7 @@ date: "2020-11-09"
 title: "Lead Android Developer"
 company: "PayPal"
 location: "Bengaluru, IN"
-range: "Nov 2020 - Present"
+range: "Nov 2020 - Jan 2022"
 url: "https://www.paypal.com/in/home"
 ---
 
