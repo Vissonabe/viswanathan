@@ -8,7 +8,7 @@ import {
   Jobs,
   Blog,
   Art,
-  Repo,
+  // Repo,
   Contact,
 } from '@components';
 
@@ -23,7 +23,7 @@ const IndexPage = ({ location }) => (
       <About />
       <Jobs />
       <Blog />
-      <Repo />
+      {/* <Repo /> */}
       <Art />
       <Contact />
     </StyledMainContainer>
