@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ImageModal } from '@components';
 import { artImages } from '@config';
 
@@ -87,9 +87,12 @@ const Art = () => {
             absolutePath
             name
             childImageSharp {
-              fluid(maxWidth: 800, maxHeight: 600) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 800
+                height: 600
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
               original {
                 src
                 width
@@ -121,6 +124,7 @@ const Art = () => {
     '#FaberCastel - #Polychrome color pencil - #Graphite pencil - #Acrylic';
 
   const handleImageClick = (art, event) => {
+    if (!art.node.childImageSharp) return;
     // Use the original high-resolution image for the modal
     const originalData = art.node.childImageSharp.original;
     const imageName = art.node.name;
@@ -164,7 +168,7 @@ const Art = () => {
         {twoList.map((artList, i) => (
           <StyledInner key={i}>
             {artList.map((art, x) => {
-              const img = art.node.childImageSharp.fluid;
+              const img = art.node.childImageSharp ? getImage(art.node.childImageSharp) : null;
               const imageName = art.node.name;
               
               // Get display title from config
@@ -175,24 +179,26 @@ const Art = () => {
                 <div 
                   className="wrapper" 
                   key={x}
-                  onClick={(event) => handleImageClick(art, event)}
+                  onClick={(event) => art.node.childImageSharp && handleImageClick(art, event)}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if ((e.key === 'Enter' || e.key === ' ') && art.node.childImageSharp) {
                       e.preventDefault();
                       handleImageClick(art, e);
                     }
                   }}
                   aria-label={`Click to view ${displayTitle} in full size`}
                 >
-                  <Img
-                    fluid={img}
-                    alt={displayTitle}
-                    className="img"
-                    draggable="false"
-                    title={displayTitle}
-                  />
+                  {img && (
+                    <GatsbyImage
+                      image={img}
+                      alt={displayTitle}
+                      className="img"
+                      draggable="false"
+                      title={displayTitle}
+                    />
+                  )}
                   <h2>{displayTitle}</h2>
                 </div>
               );
