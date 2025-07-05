@@ -197,6 +197,10 @@ const Art = () => {
                       className="img"
                       draggable="false"
                       title={displayTitle}
+                      loading={i === 0 && x === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                      priority={i === 0 && x === 0}
+                      style={{ width: 300, height: 350 }}
                     />
                   )}
                   <h2>{displayTitle}</h2>

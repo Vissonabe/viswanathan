@@ -26,6 +26,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link rel="preload" href="/fonts/Calibre/Calibre-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/SFMono/SFMono-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
