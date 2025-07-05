@@ -1,9 +1,9 @@
 ---
-date: "2017-12-21"
+date: "2014-12-21"
 title: "Software Engineer 1"
 company: "Accenture"
 location: "Bengaluru, IN"
-range: "July - December 2017"
+range: "July 2013 - December 2014"
 url: "https://www.accenture.com/in-en"
 ---
 

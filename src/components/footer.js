@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
@@ -53,22 +52,6 @@ const StyledCredit = styled.div`
   h3 {
     padding: 10px;
   }
-
-  .github-stats {
-    margin-top: 10px;
-
-    & > span {
-      display: inline-flex;
-      align-items: center;
-      margin: 0 7px;
-    }
-    svg {
-      display: inline-block;
-      width: auto;
-      height: 15px;
-      margin-right: 5px;
-    }
-  }
 `;
 
 const Footer = () => (
@@ -96,9 +79,5 @@ const Footer = () => (
     </StyledCredit>
   </StyledFooter>
 );
-
-Footer.propTypes = {
-  githubInfo: PropTypes.object,
-};
 
 export default Footer;

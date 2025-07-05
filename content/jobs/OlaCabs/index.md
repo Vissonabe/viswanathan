@@ -1,8 +1,8 @@
 ---
-date: "2018-12-21"
+date: "2015-02-20"
 title: "Software Development Engineer 2"
 company: "OlaCabs"
-location: "Bengaluru, IV"
+location: "Bengaluru, IN"
 range: "Jan 2015 - December 2018"
 url: "https://www.olacabs.com/"
 ---
