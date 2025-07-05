@@ -59,6 +59,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -73,6 +74,7 @@ const StyledPic = styled.div`
       .img {
         filter: none;
         mix-blend-mode: normal;
+        transform: scale(1.02);
       }
     }
 

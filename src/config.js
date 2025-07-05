@@ -18,27 +18,111 @@ module.exports = {
 
   aboutMe: {
     text1:
-      'Hello! I\'m Viswanathan, a software engineer based in Bengaluru, INDIA.',
+      'Hello! I\'m Viswanathan, a Senior Engineering Leader based in Bengaluru, INDIA.',
     sub1:
-      'A forward-thinking developer with more than 7 years of experience in building, integrating, testing, and supporting Android, Windows Mobile and Windows Desktop applications.      ',
+      'A Senior Engineering Leader with 12 years of experience specializing in the design, development, and delivery of secure, scalable payment systems. [cite_start]Proven success in leading full-stack teams (Java, React, iOS/Android) to launch high-impact products, serving millions of users globally.      ',
     sub2:
-      'In my 7 years of experience, I worked in multiple companies, which include Accenture, OlaCabs, Tathasthu, Swiggy & now currently working in PayPal as Lead Android Developer.',
+      'My experience includes leadership roles at Super.Money, CRED, PayPal, Swiggy, OlaCabs, and Accenture.',
     skills: [
       'Java',
       'HTML & (S)CSS',
       'Gatsby',
       'Kotlin',
+      'Dart',
+      'Android',
+      'iOS',
+      'KMP',
+      'Compose',
       'Flutter',
       'Protobuf',
+      'React',
+      'React Native',
+      'Typescript',
+      'Node.js',
     ],
   },
 
   hero: {
     name: 'Viswanathan',
-    domain: 'I build things for the Mobile (Android).',
+    domain: 'I lead engineering teams to build secure, scalable payment systems.',
     description:
-      'I\'m a software engineer based in Bengaluru, INDIA specializing in building exceptional Android mobile apps.',
+      'I\'m a Senior Engineering Leader with 12 years of experience specializing in the design, development, and delivery of secure, scalable payment systems, currently based in Bengaluru, INDIA.',
   },
+
+  artImages: [
+    {
+      filename: 'birds.jpg',
+      order: 1,
+      title: 'Birds',
+      description: 'Colorful bird artwork'
+    },
+    {
+      filename: 'black panther.jpg',
+      order: 2,
+      title: 'Black Panther',
+      description: 'Black Panther character artwork'
+    },
+    {
+      filename: 'face.jpg',
+      order: 3,
+      title: 'Face',
+      description: 'Portrait artwork'
+    },
+    {
+      filename: 'forest.jpg',
+      order: 4,
+      title: 'Forest',
+      description: 'Forest landscape artwork'
+    },
+    {
+      filename: 'guruvayurappan.jpg',
+      order: 5,
+      title: 'Guruvayurappan',
+      description: 'Lord Guruvayurappan artwork'
+    },
+    {
+      filename: 'ironman.jpg',
+      order: 6,
+      title: 'Iron Man',
+      description: 'Iron Man character artwork'
+    },
+    {
+      filename: 'lamborghini.jpg',
+      order: 7,
+      title: 'Lamborghini',
+      description: 'Lamborghini car artwork'
+    },
+    {
+      filename: 'lord ganesh.jpg',
+      order: 8,
+      title: 'Lord Ganesh',
+      description: 'Lord Ganesh artwork'
+    },
+    {
+      filename: 'lord murugan.jpg',
+      order: 9,
+      title: 'Lord Murugan',
+      description: 'Lord Murugan artwork'
+    },
+    {
+      filename: 'mother.jpg',
+      order: 10,
+      title: 'Mother',
+      description: 'Mother portrait artwork'
+    },
+    {
+      filename: 'owl.jpg',
+      order: 11,
+      title: 'Owl',
+      description: 'Owl artwork'
+    },
+    {
+      filename: 'tower.jpg',
+      order: 12,
+      title: 'Tower',
+      description: 'Tower architecture artwork'
+    }
+  ],
 
   colors: {
     green: '#64ffda',
