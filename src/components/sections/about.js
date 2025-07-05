@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { aboutMe } from '@config';
 
@@ -59,6 +59,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -73,6 +74,7 @@ const StyledPic = styled.div`
       .img {
         filter: none;
         mix-blend-mode: normal;
+        transform: scale(1.02);
       }
     }
 
@@ -114,12 +116,16 @@ const About = () => {
     query {
       avatar: file(
         sourceInstanceName: { eq: "images" }
-        relativePath: { eq: "me.jpg" }
+        relativePath: { eq: "me.jpeg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 500, maxHeight: 600, traceSVG: { color: "#64ffda" }) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
+          gatsbyImageData(
+            width: 500
+            height: 600
+            placeholder: TRACED_SVG
+            tracedSVGOptions: { color: "#64ffda" }
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }
@@ -150,11 +156,13 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <Img
-              fluid={data.avatar.childImageSharp.fluid}
-              alt="Avatar"
-              className="img"
-            />
+            {data.avatar && data.avatar.childImageSharp && (
+              <GatsbyImage
+                image={getImage(data.avatar.childImageSharp)}
+                alt="Avatar"
+                className="img"
+              />
+            )}
           </div>
         </StyledPic>
       </div>
