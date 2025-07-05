@@ -10,3 +10,4 @@ export { default as Blog } from './sections/blog';
 export { default as Art } from './sections/art';
 export { default as Contact } from './sections/contact';
 export { default as Hero } from './sections/hero';
+export { default as ImageModal } from './ImageModal';
